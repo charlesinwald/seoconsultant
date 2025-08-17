@@ -11,7 +11,7 @@ export const AnalysisCard: React.FC<AnalysisCardProps> = ({ title, icon, childre
     <div className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-lg border border-border/50 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
       <div className="p-6 bg-gradient-to-r from-primary/5 to-accent/5 flex items-center gap-4 border-b border-border/30">
         <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">{icon}</div>
-        <h3 className="text-xl font-bold text-card-foreground font-[family-name:var(--font-work-sans)]">{title}</h3>
+        <h3 className="text-2xl font-bold text-card-foreground font-[family-name:var(--font-work-sans)]">{title}</h3>
       </div>
       <div className="p-6 space-y-4">{children}</div>
     </div>
@@ -33,7 +33,7 @@ export const ScoreIndicator: React.FC<ScoreIndicatorProps> = ({ score }) => {
   return (
     <div className="flex items-center gap-2">
       <span
-        className={`px-4 py-2 text-sm font-bold rounded-full shadow-sm ${getScoreStyles(score)} transition-all duration-200`}
+        className={`px-4 py-2 text-base font-bold rounded-full shadow-sm ${getScoreStyles(score)} transition-all duration-200`}
       >
         {score}/100
       </span>

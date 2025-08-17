@@ -64,10 +64,10 @@ function App() {
               </svg>
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 font-[family-name:var(--font-work-sans)]">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 font-[family-name:var(--font-work-sans)] leading-tight">
             SEO <span className="text-primary">Analyzer</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
             Get comprehensive SEO insights powered by AI. Analyze your website&apos;s performance and discover optimization
             opportunities.
           </p>
@@ -94,9 +94,9 @@ function App() {
                   d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <h3 className="font-semibold">Analysis Failed</h3>
+              <h3 className="font-semibold text-lg">Analysis Failed</h3>
             </div>
-            <p className="text-sm opacity-90">{error}</p>
+            <p className="text-base opacity-90 leading-relaxed">{error}</p>
           </div>
         )}
 
@@ -107,7 +107,7 @@ function App() {
         )}
 
         <footer className="text-center mt-16 pt-8 border-t border-border/50">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-base leading-relaxed">
             Powered by Google Gemini • Analysis results are AI-generated and may not be 100% accurate
           </p>
         </footer>

@@ -21,8 +21,8 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className="glass-effect rounded-2xl p-8 shadow-xl border backdrop-blur-sm">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <div className="space-y-2">
-          <label htmlFor="url" className="block text-sm font-semibold text-foreground">
+        <div className="space-y-3">
+          <label htmlFor="url" className="block text-base font-semibold text-foreground">
             Website URL
           </label>
           <div className="relative">
@@ -43,12 +43,12 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
               onChange={(e) => setUrl(e.target.value)}
               placeholder="https://example.com"
               required
-              className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-primary transition-all duration-200 text-foreground placeholder-muted-foreground"
+              className="w-full pl-10 pr-4 py-4 bg-input border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-primary transition-all duration-200 text-foreground placeholder-muted-foreground text-base"
             />
           </div>
         </div>
-        <div className="space-y-2">
-          <label htmlFor="keywords" className="block text-sm font-semibold text-foreground">
+        <div className="space-y-3">
+          <label htmlFor="keywords" className="block text-base font-semibold text-foreground">
             Target Keywords
           </label>
           <div className="relative">
@@ -69,7 +69,7 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
               onChange={(e) => setKeywords(e.target.value)}
               placeholder="e.g., react components, tailwind css"
               required
-              className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-primary transition-all duration-200 text-foreground placeholder-muted-foreground"
+              className="w-full pl-10 pr-4 py-4 bg-input border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-primary transition-all duration-200 text-foreground placeholder-muted-foreground text-base"
             />
           </div>
         </div>
@@ -78,7 +78,7 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full flex justify-center items-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-lg transition-all duration-300 ease-out disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed transform hover:scale-[1.02] hover:shadow-xl disabled:transform-none disabled:shadow-none group"
+        className="w-full flex justify-center items-center px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl shadow-lg transition-all duration-300 ease-out disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed transform hover:scale-[1.02] hover:shadow-xl disabled:transform-none disabled:shadow-none group text-lg"
       >
         {isLoading ? (
           <>

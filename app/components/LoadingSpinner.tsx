@@ -12,8 +12,8 @@ export const LoadingSpinner: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
       <div className="mt-6 text-center">
-        <p className="text-lg font-semibold text-foreground mb-2">Analyzing your website...</p>
-        <p className="text-sm text-muted-foreground">This may take a few moments</p>
+        <p className="text-xl font-semibold text-foreground mb-3">Analyzing your website...</p>
+        <p className="text-base text-foreground/70">This may take a few moments</p>
       </div>
     </div>
   )
