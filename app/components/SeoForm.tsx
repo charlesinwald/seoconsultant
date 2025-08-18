@@ -8,7 +8,7 @@ interface SeoFormProps {
 }
 
 export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
-  const [url, setUrl] = useState("cloud.google.com/vertex-ai/docs/generative-ai/model-reference/gemini")
+  const [url, setUrl] = useState("wikipedia.org")
   const [keywords, setKeywords] = useState("")
 
   const normalizeUrl = (inputUrl: string): string => {
@@ -81,7 +81,7 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
               id="keywords"
               value={keywords}
               onChange={(e) => setKeywords(e.target.value)}
-              placeholder="e.g., react components, tailwind css"
+              placeholder="e.g., cats, dogs, birds"
               className="w-full pl-10 pr-4 py-4 bg-input border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-primary transition-all duration-200 text-foreground placeholder-muted-foreground text-base"
             />
           </div>
