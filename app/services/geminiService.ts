@@ -1,6 +1,6 @@
 
 import { GoogleGenAI } from "@google/genai";
-import { SeoAnalysis, GroundingChunk } from '../types';
+import { SeoAnalysis, GroundingChunk } from '../../types';
 
 const API_KEY = process.env.API_KEY;
 
@@ -68,7 +68,12 @@ export const analyzeSeo = async (url: string, keywords: string): Promise<{ analy
       },
     });
 
-    const analysis = parseJsonResponse(response.text);
+    const responseText = response.text;
+    if (!responseText) {
+      throw new Error("No response text received from Gemini API");
+    }
+    
+    const analysis = parseJsonResponse(responseText);
     const groundingChunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks as GroundingChunk[] || [];
 
     return { analysis, groundingChunks };
