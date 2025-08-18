@@ -65,7 +65,7 @@ function App() {
             </div>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 font-[family-name:var(--font-work-sans)] leading-tight">
-            SEO <span className="text-primary">Analyzer</span>
+            SEO <span className="text-primary">Consultant</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
             Get comprehensive SEO insights powered by AI. Analyze your website&apos;s performance and discover optimization
