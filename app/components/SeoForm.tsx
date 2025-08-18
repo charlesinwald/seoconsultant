@@ -8,13 +8,27 @@ interface SeoFormProps {
 }
 
 export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
-  const [url, setUrl] = useState("https://cloud.google.com/vertex-ai/docs/generative-ai/model-reference/gemini")
-  const [keywords, setKeywords] = useState("Gemini, AI, Google Cloud")
+  const [url, setUrl] = useState("cloud.google.com/vertex-ai/docs/generative-ai/model-reference/gemini")
+  const [keywords, setKeywords] = useState("")
+
+  const normalizeUrl = (inputUrl: string): string => {
+    const trimmed = inputUrl.trim()
+    if (!trimmed) return trimmed
+    
+    // If it already has a protocol, return as is
+    if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
+      return trimmed
+    }
+    
+    // Add https:// prefix if missing
+    return `https://${trimmed}`
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (url && keywords) {
-      onSubmit(url, keywords)
+    if (url) {
+      const normalizedUrl = normalizeUrl(url)
+      onSubmit(normalizedUrl, keywords)
     }
   }
 
@@ -37,11 +51,11 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
               </svg>
             </div>
             <input
-              type="url"
+              type="text"
               id="url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="https://example.com"
+              placeholder="example.com or https://example.com"
               required
               className="w-full pl-10 pr-4 py-4 bg-input border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-primary transition-all duration-200 text-foreground placeholder-muted-foreground text-base"
             />
@@ -49,7 +63,7 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
         </div>
         <div className="space-y-3">
           <label htmlFor="keywords" className="block text-base font-semibold text-foreground">
-            Target Keywords
+            Target Keywords <span className="text-muted-foreground font-normal">(optional)</span>
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -68,7 +82,6 @@ export const SeoForm: React.FC<SeoFormProps> = ({ isLoading, onSubmit }) => {
               value={keywords}
               onChange={(e) => setKeywords(e.target.value)}
               placeholder="e.g., react components, tailwind css"
-              required
               className="w-full pl-10 pr-4 py-4 bg-input border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-primary transition-all duration-200 text-foreground placeholder-muted-foreground text-base"
             />
           </div>

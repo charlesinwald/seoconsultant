@@ -5,14 +5,14 @@ export async function POST(request: NextRequest) {
   try {
     const { url, keywords } = await request.json();
     
-    if (!url || !keywords) {
+    if (!url) {
       return NextResponse.json(
-        { error: 'URL and keywords are required' },
+        { error: 'URL is required' },
         { status: 400 }
       );
     }
 
-    const result = await analyzeSeo(url, keywords);
+    const result = await analyzeSeo(url, keywords || '');
     return NextResponse.json(result);
   } catch (error) {
     console.error('Error in analyze-seo API:', error);
