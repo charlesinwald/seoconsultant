@@ -156,7 +156,7 @@ const FactorAnalysisItem: React.FC<FactorAnalysisItemProps> = ({ title, score, a
     {text && (
       <div className="bg-background/50 p-4 rounded-lg border border-border/50">
         <p className="text-sm text-muted-foreground mb-2 font-medium">Current content:</p>
-        <p className="text-base font-mono text-card-foreground break-words leading-relaxed">"{text}"</p>
+        <p className="text-base font-mono text-card-foreground break-words leading-relaxed">&quot;{text}&quot;</p>
       </div>
     )}
   </div>
