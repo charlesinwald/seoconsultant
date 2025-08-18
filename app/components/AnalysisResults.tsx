@@ -1,5 +1,5 @@
 import type React from "react"
-import type { SeoAnalysis, GroundingChunk } from "../types"
+import type { SeoAnalysis, GroundingChunk } from "../../types"
 import { ScoreGauge } from "./ScoreGauge"
 import { AnalysisCard, ScoreIndicator } from "./AnalysisCard"
 import { IconContent, IconHeadings, IconLink, IconThumbsUp, IconTitle } from "./icons"
